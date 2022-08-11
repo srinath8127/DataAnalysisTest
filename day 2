@@ -41,9 +41,9 @@ from  employees a inner join orders c on a.employeeid = c.employeeid
 where shippeddate > '1996-11-27'
 
 ---Display Employee firstname,Customerid whose customer is in city London---
-select a frist_name, c customerid
-from employees a inner join customers c on a.region = c.region
-where city like '%london%'
+select firstname, customerid
+from employees a inner join customers c on a.city = c.city
+where c.city = 'London'
 
 ----Display all orderids whose companyname starts with B---
 select orderid

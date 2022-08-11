@@ -1,54 +1,5 @@
 
------For each store, display the number of customers that are members of that store-----
-select *
-from customer c inner join store a on c.store_id = a.store_id
-where customer_id = manager_staff_id
 
-----Display the customer names that share the same address----
-Create view address_1
-as
-select c.first_name , c.last_name , a.address, c.customer_id
-from customer c inner join address a
-on c.address_id = a.address_id
-
-select * from address_1
-
-select a.last_name , a.first_name
-from address_1 a join address_1 c
-on a.address = c. address
-
------display customer lastname, firstname whose rentalid is greater than 2500----
-select * from customer
-where customer_id = ( select customer_id from rental where
-rental_id > 2500 )
-
-
----Display payment amount,paymentdate of customer whose lastname is Miller---
-
-select amount, payment_date from payment
-where customer_id = (select customer_id from  customer where last_name like '%Miller%')
-
-##NORTH WIND###
------Display avg of unitprices for all the categories of the products----
-select productname, categoryid, avg(unitprice) over(partition by categoryid)
-as totalavg from products
-
-
----Display all emp details whose shippeddate greater than 1996-11-27----
-
-select *
-from  employees a inner join orders c on a.employeeid = c.employeeid
-where shippeddate > '1996-11-27'
-
----Display Employee firstname,Customerid whose customer is in city London---
-select firstname, customerid
-from employees a inner join customers c on a.city = c.city
-where c.city = 'London'
-
-----Display all orderids whose companyname starts with B---
-select orderid
-from order_details, customers
-where companyname = '%_B%'
 
 
 

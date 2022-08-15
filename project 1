@@ -1,0 +1,57 @@
+---i had worked as a SQL developer and data analyst for a online products retail company.
+---i used to help sales and marketing team to analyise the sale and inventory
+---As e-commerce experiences remarkable growth around the world,
+---the application allows the customer to register and buy an item using the internet.
+---The registration process typically involves the generation of a unique customer ID and password and in many cases,
+---consolidates information like Name, Address, Contact Information etc.
+
+---Once a user purchases a product, a bill is generated based on the price, and discount, if any.
+---The customer has to choose a payment method to settle the transaction before it is delivered to the selected location.
+
+### Agenda of the project###
+---The project’s Agenda involves Analyzing the data using SQL on the postgreSQL
+noticing relationships between tables, walking through the columns,
+and seeing comments. Records are displayed in an ordered manner, handling NULL values,
+and selecting records based on patterns like Wildcard, Operators, etc.
+Then working on Data Manipulation commands(DML) for Data Analysis.
+then taking Backup of the Table where migration is going on and use COMMIT and ROLLBACK commands.
+Then listing down distinct records, further renaming columns, and finally,
+listing down employee details based on the complex nested conditions.
+
+
+#### Order by
+--The ORDER BY keyword sorts the records in ascending order by default.
+--To sort the records in descending order, use the DESC keyword.
+
+select productname, supplierid, productid
+from products
+order by productid
+
+## like  and where
+--The LIKE command is used in a
+--WHERE clause to search for a specified pattern in a column.
+--You can use two wildcards with LIKE : %
+
+select productname, supplierid, productid
+from products
+where productname like '_c%'
+
+##delete
+---- The DELETE command is used to delete existing records in a table.
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+
+##distinct
+The SELECT DISTINCT statement is used to return only distinct (different) values.
+SELECT DISTINCT Country FROM Customers;
+
+## NULL function
+
+---NULL is used in SQL to indicate that a value doesn't exist in the database.
+
+SELECT ProductName, UnitPrice * (UnitsInStock + UnitsOnOrder)
+FROM Products;
+
+## IN
+---The IN operator allows you to specify multiple values in a WHERE clause.
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');

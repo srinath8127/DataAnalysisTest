@@ -1,0 +1,63 @@
+####Introduction
+
+---i had worked as a SQL developer and data analyst for a online products retail company.
+---i used to help sales and marketing team to analyise the sale and inventory
+---As e-commerce experiences remarkable growth around the world,
+---the application allows the customer to register and buy an item using the internet.
+---The registration process typically involves the generation of a unique customer ID and password and in many cases,
+---consolidates information like Name, Address, Contact Information etc.
+
+---Once a user purchases a product, a bill is generated based on the price, and discount, if any.
+---The customer has to choose a payment method to settle the transaction before it is delivered to the selected location.
+
+#### project agenda
+This project involves data analysis using different SQL functions like ROW_NUMBER,
+RANK, DENSE_RANK, SUBSTR, INSTR, COALESCE and NVL. It also involves the use of some built-in
+functions like concat, upper, lower, initcap, rtrim, ltrim, length, lpad, rpad.
+
+ROW_NUMBER
+Numbers the output of a result set. More specifically, returns the sequential
+number of a row within a partition of a result set, starting at 1 for the first row in each partition.
+
+SELECT
+  ROW_NUMBER() OVER(ORDER BY customerid ASC) AS Row,
+  contactname , companyname, contacttitle, customerid
+FROM customers
+
+RANK AND DENSE_RANK
+Ranking functions return a ranking value for each row in a partition.
+Depending on the function that is used, some rows might receive the same value as other rows.
+Ranking functions are nondeterministic.
+
+
+SELECT e.firstname, e.lastname
+    ,ROW_NUMBER() OVER (ORDER BY e.hiredate) AS "Row Number"
+    ,RANK() OVER (ORDER BY e.hiredate) AS Rank
+    ,DENSE_RANK() OVER (ORDER BY e.hiredate) AS "Dense Rank"
+    ,o.orderid
+    ,e.hiredate
+	,o.customerid
+FROM employees e
+    INNER JOIN orders o
+        ON e.employeeid = o.employeeid
+
+##CONCAT
+The CONCAT() function adds two or more expressions together.
+
+SELECT CONCAT(address ||' ' ||  postalcode || ' ' ||  city) AS address,
+contactname, companyname, customerid, contacttitle
+FROM customers;
+
+##TRIM
+The TRIM() function removes the space character OR other specified characters from the start or end of a string.
+
+select upper(concat(firstname,' ',lastname)) as fullname,
+trim(concat(firstname,' ',lastname))
+as fulllname from employees
+
+
+
+
+
+
+

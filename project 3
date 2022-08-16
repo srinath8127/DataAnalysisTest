@@ -1,0 +1,61 @@
+####Introduction
+
+---i had worked as a SQL developer and data analyst for a online products retail company.
+---i used to help sales and marketing team to analyise the sale and inventory
+---As e-commerce experiences remarkable growth around the world,
+---the application allows the customer to register and buy an item using the internet.
+---The registration process typically involves the generation of a unique customer ID and password and in many cases,
+---consolidates information like Name, Address, Contact Information etc.
+
+---Once a user purchases a product, a bill is generated based on the price, and discount, if any.
+---The customer has to choose a payment method to settle the transaction before it is delivered to the selected location.
+
+### Agenda of the project
+--- tThis project’s Agenda involves Analyzing the data using SQL onhe postgreSQL.
+---This project involves the data analysis using Sub-query, Group-by clause and Exists clause.
+---It also consists of using inline view and aggregate functions(Min, Max, Count, Avg)
+---to perform better analysis on data.
+
+### Sub-query
+A Subquery or Inner query or a Nested query is a query within another SQL query
+
+
+
+## group by
+select c.categoryname , sum(unitsinstock) as total_unitsinstock
+from categories c inner join products p on c.categoryid = p.categoryid
+group by c.categoryname
+having sum(unitsinstock)>500
+
+## Min
+The MIN() function returns the smallest value of the selected column.
+
+select c.categoryname , min(unitsinstock) as min_unitsinstock
+from categories c inner join products p on c.categoryid = p.categoryid
+group by c.categoryname
+having min(unitsinstock)>0
+
+## Max
+The Max () function returns the largest value in the seleced column
+
+select productid, categoryid, max(unitprice)
+over(PARTITION by categoryid) as unitprice
+from products
+
+##Count
+The COUNT() function returns the number of rows that matches a specified criterion.
+
+select productid, orderid, count(quantity)
+over(partition by orderid) as count_quantity
+from order_details
+
+## Avg
+The AVG() function returns the average value of a numeric column
+
+
+
+
+
+
+
+

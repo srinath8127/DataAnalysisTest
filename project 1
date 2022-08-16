@@ -8,7 +8,7 @@
 ---Once a user purchases a product, a bill is generated based on the price, and discount, if any.
 ---The customer has to choose a payment method to settle the transaction before it is delivered to the selected location.
 
-### Agenda of the project###
+### Agenda of the project
 ---The project’s Agenda involves Analyzing the data using SQL on the postgreSQL
 noticing relationships between tables, walking through the columns,
 and seeing comments. Records are displayed in an ordered manner, handling NULL values,

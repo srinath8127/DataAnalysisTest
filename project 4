@@ -1,0 +1,19 @@
+####Introduction
+
+---i had worked as a SQL developer and data analyst for a online products retail company.
+---i used to help sales and marketing team to analyise the sale and inventory
+---As e-commerce experiences remarkable growth around the world,
+---the application allows the customer to register and buy an item using the internet.
+---The registration process typically involves the generation of a unique customer ID and password and in many cases,
+---consolidates information like Name, Address, Contact Information etc.
+
+---Once a user purchases a product, a bill is generated based on the price, and discount, if any.
+---The customer has to choose a payment method to settle the transaction before it is delivered to the selected location.
+
+###agenda of the project
+This project’s Agenda involves Analyzing the data using SQL onhe postgreSQL.
+
+This project involves the data analysis using WITH clause,
+the difference between COUNT(*) and COUNT(column_name),
+Categorization using the CASE statement, and various real-life case studies/problem statements.
+
